@@ -1,0 +1,33 @@
+/* Light mode default */
+body {
+    background: #fff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Dark mode */
+  body.dark-mode {
+    background: #111;
+    color: #eee;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body.dark-mode nav {
+    background: #000;
+  }
+  
+  body.dark-mode .project-card {
+    background: #222;
+  }
+  
+  #theme-toggle {
+    background: none;
+    border: none;
+    color: #ff6600;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+ body.dark-mode footer { background: #000; }

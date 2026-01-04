@@ -1,0 +1,21 @@
+section h2 {
+    color: #e65c00;      /* default: black for light mode */
+    text-align: center;   /* centers titles for consistency */
+    margin-bottom: 20px;  /* spacing below title */
+    font-size: 2em;       /* larger, more prominent */
+    font-weight: bold;
+}
+
+section {
+    /* removed min-height: 100vh */
+    display: flex;          /* centers content */
+    flex-direction: column; /* keeps title + content stacked */
+    justify-content: center;/* vertical centering */
+    align-items: center;    /* horizontal centering */
+    padding: 40px 20px;     /* breathing room */
+    box-sizing: border-box; /* ensures padding doesn’t break layout */
+}
+
+html {
+    scroll-behavior: smooth;
+}

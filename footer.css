@@ -1,0 +1,91 @@
+footer {
+  background: #fff;                  /* solid white in light mode */
+  color: #222;
+  text-align: center;
+  padding: 70px 30px;                /* more vertical + horizontal space */
+  border-top: 2px solid #ff6600;     /* accent line for separation */
+}
+
+footer h2 {
+  margin-top: 0;
+  margin-bottom: 20px;               /* extra space below title */
+  color: #ff6600;
+  font-size: 1.8em;
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #ff6600;                    /* orange text for consistency */
+}
+
+footer a {
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #111;                       /* subtle contrast hover */
+  text-decoration: underline;
+}
+
+/* Social icons */
+footer .social-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+footer .social-icons .icon {
+  background: #fff;                  /* solid white in light mode */
+  border: 2px solid #ff6600;         /* orange border */
+  padding: 12px;
+  border-radius: 50%;                /* circular icons */
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s, color 0.3s, box-shadow 0.3s;
+  font-size: 1.2em;
+  color: #ff6600;                    /* orange icon */
+}
+
+footer .social-icons .icon:hover {
+  background: #ff6600;
+  color: #fff;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 102, 0, 0.6); /* subtle neon glow */
+}
+
+/* Dark mode override */
+body.dark-mode footer {
+  background: #000;                  /* solid dark in dark mode */
+  border-top: 2px solid #ff6600;
+  color: #eee;
+}
+
+body.dark-mode footer h2,
+body.dark-mode footer p,
+body.dark-mode footer a {
+  color: #ff6600;                    /* keep orange accents in dark mode */
+}
+
+body.dark-mode footer a:hover {
+  color: #fff;
+}
+
+body.dark-mode footer .social-icons .icon {
+  background: #111;                  /* solid dark in dark mode */
+  border: 2px solid #ff6600;
+  color: #ff6600;
+}
+
+body.dark-mode footer .social-icons .icon:hover {
+  background: #ff6600;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 102, 0, 0.8); /* neon glow in dark mode */
+}

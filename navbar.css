@@ -1,0 +1,280 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Comic+Neue:wght@700&display=swap');
+
+html { scroll-behavior: smooth; }
+#hero { scroll-margin-top: 100px; }
+
+
+/* Base navbar */
+nav {
+  position: fixed;                
+  top: 20px;                      
+  left: 50%;
+  transform: translateX(-50%);    
+  background: linear-gradient(135deg, rgba(255, 102, 0, 0.15), rgba(138, 43, 226, 0.15));
+  backdrop-filter: blur(8px);     
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 1000;
+  border: 2px solid #ff6600;
+  border-radius: 50px;            
+  box-shadow: 0 0 12px rgba(255, 102, 0, 0.6); 
+  width: 85%;                     
+  max-width: 1000px;
+  animation: pulseGlow 3s ease-in-out infinite; 
+  font-family: 'Orbitron', 'Comic Neue', sans-serif;
+}
+
+/* Logo */
+nav .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6600, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav .logo:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  text-shadow: 0 0 8px rgba(255, 102, 0, 0.6);
+}
+
+/* Links */
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li { margin-left: 20px; }
+
+nav ul li a {
+  text-decoration: none;
+  font-family: 'Orbitron', 'Comic Neue', sans-serif;
+  background: linear-gradient(135deg, #ff6600, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.3s, box-shadow 0.3s;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #ff6600;
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.7);
+}
+
+/* Burger menu */
+.menu-toggle {
+  display: none;
+  width: 30px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(255, 102, 0, 0.6), rgba(138, 43, 226, 0.6));
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Animate into X when open */
+.menu-toggle.open span:nth-child(1) { transform: rotate(45deg) translateY(9px); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: rotate(-45deg) translateY(-9px); }
+
+/* Glow animation */
+@keyframes pulseGlow {
+  0%   { box-shadow: 0 0 6px rgba(255, 102, 0, 0.4); }
+  50%  { box-shadow: 0 0 12px rgba(255, 102, 0, 0.8); }
+  100% { box-shadow: 0 0 6px rgba(255, 102, 0, 0.4); }
+}
+
+/* Dark mode navbar */
+body.dark-mode nav {
+  background: linear-gradient(135deg, rgba(255, 102, 0, 0.25), rgba(138, 43, 226, 0.25));
+  border: 2px solid #ff6600;
+  box-shadow: 0 0 14px rgba(255, 102, 0, 0.9);
+  animation: pulseGlowDark 3s ease-in-out infinite;
+}
+
+body.dark-mode nav ul li a:hover,
+body.dark-mode nav ul li a.active {
+  border-bottom: 2px solid #ff6600;
+  box-shadow: 0 0 12px rgba(255, 102, 0, 1);
+}
+
+/* Base navbar stays the same */
+
+/* Mobile dropdown */
+@media (max-width: 768px) {
+  nav {
+    top: 8px;
+    left: 0;                  /* ✅ reset centering */
+    transform: none;          /* ✅ no translate */
+    width: 95%;               /* ✅ fits viewport */
+    max-width: none;
+    margin: 0 auto;           /* ✅ center horizontally */
+    padding: 6px 16px;
+    border-radius: 40px;      /* ✅ keep pill shape */
+    height: 48px;
+  }
+
+  nav .logo {
+    font-size: 1.1em;
+  }
+
+  nav ul {
+    display: none;            /* hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 8px); /* dropdown below navbar */
+    right: 10px; /* ✅ anchor to right side */
+    left: auto;                 /* ✅ stretch full width */
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.15), rgba(138, 43, 226, 0.15));
+    border: 1px solid #ff6600;
+    border-radius: 20px;      /* ✅ oblong dropdown */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(255,102,0,0.6);
+    z-index: 1001;            /* ✅ above navbar */
+  }
+
+  nav ul.showing {
+    display: flex;            /* ✅ show when toggled */
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+    width: 22px;
+    height: 16px;
+  }
+
+  .menu-toggle span {
+    height: 2px;
+  }
+}
+
+/* Desktop reset stays the same */
+
+/* Desktop reset */
+@media (min-width: 769px) {
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: none;
+    border: none;
+    box-shadow: none;
+    width: auto;
+    padding: 0;
+  }
+
+  nav ul li { margin: 0 0 0 20px; }
+
+  .menu-toggle { display: none; }
+}
+
+
+
+
+/* Toggle switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-left: 20px; /* space it from the nav items */
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider background */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: linear-gradient(135deg, #ff6600, #8a2be2);
+  transition: 0.4s;
+  border-radius: 26px;
+}
+
+/* Slider knob */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: #fff;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Checked state (dark mode) */
+.switch input:checked + .slider {
+  background: linear-gradient(135deg, #8a2be2, #ff6600);
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+@media (max-width: 768px) {
+  nav {
+    top: 8px;                  /* slightly closer to top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;                /* narrower so it fits */
+    max-width: 420px;          /* cap width for small screens */
+    padding: 6px 16px;         /* reduced padding */
+    border-radius: 40px;       /* ✅ keep pill/oblong shape */
+    height: 48px;              /* proportionally shorter */
+  }
+
+  nav .logo {
+    font-size: 1.1em;          /* smaller logo text */
+  }
+
+  nav ul {
+    right: 5px;
+    width: 160px;              /* smaller dropdown */
+    border-radius: 20px;       /* dropdown also oblong */
+  }
+
+  .menu-toggle {
+    width: 22px;               /* smaller burger */
+    height: 16px;
+  }
+
+  .menu-toggle span {
+    height: 2px;               /* thinner burger lines */
+  }
+}
+

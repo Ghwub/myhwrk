@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="carousel.css">
+  <link rel="stylesheet" href="article.css">
+
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="hero.css">
+  <link rel="stylesheet" href="project.css">
+  <link rel="stylesheet" href="skills.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="#home" class="logo">MEL</a>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <!-- Hero Section -->
+<header class="hero" id="home">
+
+    <!-- Profile image --> <img src="images1.jpg" alt="Melanie's photo" class="hero-pic">
+
+    <h1>MELANIE ORINAY</h1>
+    <p>Fullstack Developer</p>
+    
+    <div class="buttons">
+      <a href="#projects" class="cta">View My Work</a>
+      <a href="resume.pdf" download class="cta">Download Resume</a>
+    </div>
+
+    <!-- Social icons -->
+    <div class="social-icons">
+      <a href="https://github.com/yourusername" target="_blank" class="icon">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" class="icon">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://twitter.com/yourusername" target="_blank" class="icon">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </header>
+  
+  
+  <!-- About Section -->
+  <!-- About Section -->
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title">What I Do</h2>
+    <div class="services-grid">
+      <article class="service-card" data-article="webdev">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Responsive apps with React, Node.js, and databases.</p>
+      </article>
+      <article class="service-card" data-article="uiux">
+        <i class="fas fa-paint-brush"></i>
+        <h3>UI/UX Design</h3>
+        <p>Clean, accessible layouts with neon accents.</p>
+      </article>
+      <article class="service-card" data-article="itsupport">
+        <i class="fas fa-tools"></i>
+        <h3>IT Support</h3>
+        <p>Troubleshooting, deployment, and documentation.</p>
+      </article>
+      <article class="service-card" data-article="problemsolving">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Problem Solving</h3>
+        <p>Creative approaches to technical challenges.</p>
+      </article>
+      <article class="service-card" data-article="database">
+        <i class="fas fa-database"></i>
+        <h3>Database Management</h3>
+        <p>MongoDB and PostgreSQL optimization.</p>
+      </article>
+      <article class="service-card" data-article="aboutme">
+        <i class="fab fa-git-alt"></i>
+        <h3>About Me</h3>
+        <p>More about me.</p>
+      </article>
+      <article class="service-card" data-article="versioncontrol">
+        <i class="fab fa-git-alt"></i>
+        <h3>Version Control</h3>
+        <p>Efficient collaboration with Git & GitHub.</p>
+      </article>
+    </div>
+    <button id="show-more-btn">Show More</button>
+  </section>
+
+
+  <!-- Expanded Article Overlay -->
+<!-- Overlay -->
+  <div id="article-overlay" class="article-expanded" style="display: none;">
+    <span class="close-x">×</span>
+    <div class="news-article">
+      <h1 id="expanded-title">Placeholder Title</h1>
+      <div id="expanded-body">
+        <p>Placeholder content goes here.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    
+    <div class="carousel">
+      <div class="carousel-track">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="images/resume.png" alt="Project 1">
+          <h3>Portfolio Website</h3>
+          <p>A responsive portfolio with neon highlights.</p>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="images/resume.png" alt="Project 2">
+          <h3>Fullstack App</h3>
+          <p>React + Node.js app with MongoDB backend.</p>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card">
+          <img src="images/resume.png" alt="Project 3">
+          <h3>UI/UX Redesign</h3>
+          <p>Modern redesign with improved accessibility.</p>
+        </div>
+        <div class="project-card">
+            <img src="images/resume.png" alt="Project 1">
+            <h3>Portfolio Website</h3>
+            <p>A responsive portfolio with neon highlights.</p>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="images/resume.png" alt="Project 2">
+            <h3>Fullstack App</h3>
+            <p>React + Node.js app with MongoDB backend.</p>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card">
+            <img src="images/resume.png" alt="Project 3">
+            <h3>UI/UX Redesign</h3>
+            <p>Modern redesign with improved accessibility.</p>
+          </div>
+          <div class="project-card">
+            <img src="images/resume.png" alt="Project 1">
+            <h3>Portfolio Website</h3>
+            <p>A responsive portfolio with neon highlights.</p>
+          </div>
+          <!-- Project 2 -->
+          <div class="project-card">
+            <img src="images/resume.png" alt="Project 2">
+            <h3>Fullstack App</h3>
+            <p>React + Node.js app with MongoDB backend.</p>
+          </div>
+          <!-- Project 3 -->
+          <div class="project-card">
+            <img src="images/resume.png" alt="Project 3">
+            <h3>UI/UX Redesign</h3>
+            <p>Modern redesign with improved accessibility.</p>
+          </div>
+      </div>
+  
+      <!-- Carousel controls -->
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </section>
+  
+  
+  
+  
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill"><i class="fab fa-react"></i> React</div>
+      <div class="skill"><i class="fab fa-html5"></i> HTML</div>
+      <div class="skill"><i class="fab fa-css3-alt"></i> CSS</div>
+      <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+      <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
+      <div class="skill"><i class="fas fa-server"></i> Express</div>
+      <div class="skill"><i class="fas fa-database"></i> MongoDB</div>
+      <div class="skill"><i class="fas fa-database"></i> PostgreSQL</div>
+      <div class="skill"><i class="fab fa-git-alt"></i> Git</div>
+      <div class="skill"><i class="fab fa-docker"></i> Docker</div>
+    </div>
+  </section>
+  
+
+  <!-- Contact Section -->
+  <!-- Contact Section -->
+  <footer id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
+    <div class="social-icons">
+      <a href="https://linkedin.com/in/yourusername" target="_blank" class="icon linkedin">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/yourusername" target="_blank" class="icon github">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:yourname@email.com" class="icon email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <!-- Contact Form -->
+     <div id="contact-form">
+        <h3>Get in Touch</h3>
+        <form id="contactForm">
+            <input type="text" name="user_name" placeholder="Your Name" required>
+            <input type="email" name="user_email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+            <div id="formMessage"></div> <!-- Inline feedback -->
+        </form>
+        <p style="margin-top: 30px;">© 2026 Melanie. All rights reserved.</p>
+    </div>
+  </footer>
+  
+
+  <!-- Navbar toggle script -->
+  <script src="script.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+        emailjs.init("lw6fj5sIv6ANatwDO"); //public key
+    })();
+  </script>
+
+</body>
+</html>

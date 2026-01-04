@@ -1,0 +1,438 @@
+/* Base hero styling (use variables for theme) */
+.hero {
+    background: var(--card, #ffffff);
+    color: var(--text, #ff6600);
+    text-align: center;
+    padding: 80px 20px;              /* slightly reduced padding */
+  }
+  
+  /* General button style */
+  .btn {
+    background: var(--accent, #ff6600);
+    color: var(--btn-text, #fff);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px solid #ff6600;
+    animation: pulseGlow 3s ease-in-out infinite; /* pulsing glow */
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  
+  .btn:hover {
+    background: #e65c00;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.8);
+  }
+  
+  /* Full-screen hero header */
+  header.hero {
+    position: relative;               /* for overlay */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+
+    /* Neon gradient background */
+    background: linear-gradient(
+      135deg,
+      rgba(255, 102, 0, 0.15),   /* soft orange glow */
+      rgba(138, 43, 226, 0.15)   /* soft purple glow */
+    );
+  }
+  
+/* Light mode hero paragraph glow */
+header.hero p {
+  font-family: 'Orbitron', 'Comic Neue', sans-serif;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 12px 0;
+  color: #fff;
+
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.4),
+               0 0 6px rgba(255, 102, 0, 0.4);
+
+  animation: textGlow 4s ease-in-out infinite;
+}
+
+/* Dark mode hero paragraph glow */
+body.dark-mode header.hero p {
+  color: #f0f0f0;
+
+  text-shadow: 0 0 3px rgba(138, 43, 226, 0.4),
+               0 0 6px rgba(0, 170, 255, 0.4);
+
+  animation: textGlowDark 4s ease-in-out infinite;
+}
+
+/* Light mode glow animation */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.4),
+                 0 0 6px rgba(255, 102, 0, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6),
+                 0 0 10px rgba(255, 102, 0, 0.6);
+  }
+}
+
+/* Dark mode glow animation */
+@keyframes textGlowDark {
+  0%, 100% {
+    text-shadow: 0 0 3px rgba(138, 43, 226, 0.4),
+                 0 0 6px rgba(0, 170, 255, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(138, 43, 226, 0.6),
+                 0 0 10px rgba(0, 170, 255, 0.6);
+  }
+}
+
+
+
+
+  /* CTA buttons inside hero */
+  header.hero .buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 18px;
+  }
+  
+/* CTA buttons inside hero */
+header.hero a.cta {
+  background: transparent;
+  color: #ff6600; /* keep text white for readability */
+  font-family: 'Orbitron', 'Comic Neue', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 2px solid #ff6600;
+
+  /* Subtle orange glow */
+  text-shadow: 0 0 3px rgba(255, 102, 0, 0.4),
+               0 0 6px rgba(255, 102, 0, 0.3);
+
+  animation: buttonTextGlow 4s ease-in-out infinite;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* Hover state */
+header.hero a.cta:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 102, 0, 0.25),
+    rgba(138, 43, 226, 0.25)
+  );
+  color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.6); /* softer orange glow */
+}
+
+/* Glow animation */
+@keyframes buttonTextGlow {
+  0%, 100% {
+    text-shadow: 0 0 3px rgba(255, 102, 0, 0.4),
+                 0 0 6px rgba(255, 102, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(255, 102, 0, 0.6),
+                 0 0 10px rgba(255, 102, 0, 0.5);
+  }
+}
+
+  /* Contact info */
+  .hero-contact {
+    margin-top: 14px;
+    font-size: 0.9em;
+    color: #fff;
+  }
+  
+  .hero-contact a {
+    color: #ff6600;
+    text-decoration: none;
+  }
+  
+  .hero-contact a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Social icons */
+  .social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  /* Social icons */
+.social-icons .icon {
+  background: transparent; /* blend into hero background */
+  border: 2px solid #ff6600; /* orange border */
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s, color 0.3s, box-shadow 0.3s;
+  font-size: 1.2em;
+  color: #ff6600; /* white icon for readability */
+}
+
+.social-icons .icon:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 102, 0, 0.25),
+    rgba(255, 165, 0, 0.25)
+  ); /* subtle orange gradient fill */
+  color: #fff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.8); /* orange glow */
+}
+  
+  .hero-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+    border: 3px solid #ff6600;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.6);
+    animation: pulseGlow 3s ease-in-out infinite; /* pulsing glow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .hero-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.8);
+  }
+  
+  /* Dark mode glow */
+  body.dark-mode .hero-pic {
+    border: 3px solid #ff6600;
+    box-shadow: 0 0 18px rgba(255, 102, 0, 0.9);
+    animation: pulseGlowDark 3s ease-in-out infinite;
+  }
+  
+  /* Dark mode hero */
+  body.dark-mode header.hero {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 102, 0, 0.25),   /* stronger orange glow */
+      rgba(138, 43, 226, 0.25)   /* stronger purple glow */
+    );
+    color: #fff;
+  }
+  
+  body.dark-mode .social-icons .icon {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 102, 0, 0.35), 
+      rgba(138, 43, 226, 0.35)
+    );
+    border: 2px solid #ff6600;
+    color: #ff6600;
+  }
+  
+body.dark-mode .social-icons .icon:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 102, 0, 0.25),
+    rgba(138, 43, 226, 0.25)
+  ); /* subtle neon gradient fill */
+  color: #fff; /* keep icons readable */
+  transform: translateY(-3px) scale(1.05);
+
+  /* Softer orange glow */
+  box-shadow: 0 0 8px rgba(255, 102, 0, 0.6),
+              0 0 12px rgba(138, 43, 226, 0.5);
+}
+
+  /* Keyframes for pulsing glow */
+  @keyframes pulseGlow {
+    0%   { box-shadow: 0 0 12px rgba(255, 102, 0, 0.4); }
+    50%  { box-shadow: 0 0 20px rgba(255, 102, 0, 0.8); }
+    100% { box-shadow: 0 0 12px rgba(255, 102, 0, 0.4); }
+  }
+  
+  @keyframes pulseGlowDark {
+    0%   { box-shadow: 0 0 14px rgba(255, 102, 0, 0.6); }
+    50%  { box-shadow: 0 0 24px rgba(255, 102, 0, 1); }
+    100% { box-shadow: 0 0 14px rgba(255, 102, 0, 0.6); }
+  }
+
+/* Light mode heading */
+header.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 6em;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  /* Knockout gradient fill (light mode hero background) */
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Orange border */
+  -webkit-text-stroke: 1.5px rgba(255, 102, 0, 0.95);
+  text-stroke: 1.5px rgba(255, 102, 0, 0.95);
+
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Dark mode heading */
+body.dark-mode header.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 6em;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  /* Gradient fill inside */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 102, 0, 0.25),
+    rgba(138, 43, 226, 0.25)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Orange border */
+  -webkit-text-stroke: 1.5px #ff6600;
+  text-stroke: 1.5px #ff6600;
+
+  /* Glow applied to the stroke */
+  filter: drop-shadow(0 0 8px rgba(255, 102, 0, 0.8));
+
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Keyframes for pulsing border glow */
+@keyframes borderPulseGlow {
+  0% { filter: drop-shadow(0 0 4px rgba(255, 102, 0, 0.4)); }
+  50% { filter: drop-shadow(0 0 12px rgba(255, 102, 0, 1)); }
+  100% { filter: drop-shadow(0 0 4px rgba(255, 102, 0, 0.4)); }
+}
+
+/* Unified heading for both modes */
+header.hero h1,
+body.dark-mode header.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2rem, 6vw, 6em); /* ✅ same scaling in both modes */
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Light mode gradient fill */
+header.hero h1 {
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 102, 0, 0.95);
+  text-stroke: 1.5px rgba(255, 102, 0, 0.95);
+}
+
+/* Dark mode gradient + glow */
+body.dark-mode header.hero h1 {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 102, 0, 0.25),
+    rgba(138, 43, 226, 0.25)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px #ff6600;
+  text-stroke: 1.5px #ff6600;
+  filter: drop-shadow(0 0 6px rgba(255, 102, 0, 0.6));
+  animation: borderPulseGlow 3s ease-in-out infinite;
+}
+
+
+/* Keyframes for pulsing border glow */
+@keyframes borderPulseGlow {
+  0% { filter: drop-shadow(0 0 4px rgba(255, 102, 0, 0.4)); }
+  50% { filter: drop-shadow(0 0 12px rgba(255, 102, 0, 1)); }
+  100% { filter: drop-shadow(0 0 4px rgba(255, 102, 0, 0.4)); }
+}
+
+@media (max-width: 500px) {
+  header.hero {
+    padding: 15px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ✅ force center alignment */
+    text-align: center;    /* ✅ center text */
+  }
+
+  .hero-pic {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 6px;
+    border: 2px solid #ff6600;
+    box-shadow: 0 0 8px rgba(255, 102, 0, 0.6);
+  }
+
+  header.hero h1,
+  body.dark-mode header.hero h1 {
+    font-size: clamp(1.2rem, 6vw, 6em);
+    letter-spacing: 0.5px;
+    -webkit-text-stroke: 0.5px #ff6600;
+    text-stroke: 0.5px #ff6600;
+    line-height: 1.05;
+    text-align: center;    /* ✅ ensure heading is centered */
+  }
+
+  header.hero .buttons {
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;   /* ✅ center buttons */
+    justify-content: center;
+    width: 100%;
+  }
+
+  header.hero a.cta {
+    width: 100%;
+    max-width: 180px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    margin: 0 auto;        /* ✅ center button block */
+    text-align: center;
+  }
+
+  .hero-contact {
+    font-size: 0.7em;
+    text-align: center;    /* ✅ center contact info */
+  }
+
+  .social-icons {
+    gap: 6px;
+    justify-content: center; /* ✅ center icons */
+  }
+
+  .social-icons .icon {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9em;
+    padding: 5px;
+  }
+}
+
